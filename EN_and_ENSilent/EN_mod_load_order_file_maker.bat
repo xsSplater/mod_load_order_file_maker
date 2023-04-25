@@ -101,7 +101,7 @@ rem Standart color. Black text and white letters
 	echo.
 
 rem BACKUP THE MOD_LOAD_ORDER.TXT FILE
-	 echo f | XCOPY mod_load_order.txt mod_load_order.txt_%Date:~0,2%.%Date:~3,2%.%Date:~6,4%_%TIME:~0,2%.%TIME:~3,2%.%TIME:~6,4%_.bak /y /i 1>nul
+	 echo f | XCOPY mod_load_order.txt mod_load_order.txt_%Date:~0,2%.%Date:~3,2%.%Date:~6,4%_%TIME:~3,2%%TIME:~6,5%.bak /y /i 1>nul
 
 	timeout /t 2 1>nul
 	rem Light green text color
@@ -143,7 +143,7 @@ rem Standart color. Black text and white letters
 	timeout /t 2 1>nul
 	cls
 
-rem IF THE SCOREBOARD MOD IS NOT INSTALLED, SKIP ALL ITS CHECK...
+rem IF THE SCOREBOARD MOD IS NOT INSTALLED, SKIP ALL ITS CHECKS...
 if NOT exist scoreboard goto GOcheck
 
 rem IF THE SCOREBOARD MOD IS INSTALLED...
@@ -177,11 +177,20 @@ rem IF THE ANIMATION EVENTS MOD IS NOT INSTALLED...
 		echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
 		echo █ Oops‼ You haven't installed the Animation Events mod‼        █
 		echo █ Without it, the Scoreboard mod will not work‼                █
-		echo █ INSTALL ANIMATION EVENTS MOD AND RUN THIS FILE AGAIN‼        █
 		echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
 		echo.
-		pause
-		exit
+		echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+		echo █ Do you want to open the Animation Events mod page in         █
+		echo █ your browser?                                                █
+		echo █                                                              █
+		echo █  Y - Yes, open the mod page for me. EXIT‼                    █
+		echo █  N - No need, I'll do it myself. EXIT‼                       █
+		echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+		echo.
+
+		Choice
+			If Errorlevel 2 Goto NoAEMS
+			If Errorlevel 1 Goto YesAEMS
 	)
 
 rem IF THE ANIMATION EVENTS MOD IS INSTALLED...
@@ -218,9 +227,36 @@ rem IF THE ANIMATION EVENTS MOD IS INSTALLED...
 	)
 )
 
+goto GOcheck
+
+rem OPEN THE ANIMATION EVENTS MOD PAGE IN A BROWSER?----------------------------!
+:YesAEMS
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ Now the mod page will open and this window will close‼       █
+	echo █ INSTALL THE ANIMATION EVENTS MOD AND RUN THIS FILE AGAIN‼    █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	pause
+	start https://www.nexusmods.com/warhammer40kdarktide/mods/21
+exit
+
+:NoAEMS
+	cls
+	rem Red text color
+	color 0C
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ INSTALL THE ANIMATION EVENTS MOD AND RUN THIS FILE AGAIN‼    █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	pause
+exit
+rem ----------------------------------------------------------------------------!
+
 :GOcheck
 
-rem IF THE GRAPHICS OPTIONS MOD IS NOT INSTALLED, SKIP ALL ITS CHECK...
+rem IF THE GRAPHICS OPTIONS MOD IS NOT INSTALLED, SKIP ALL ITS CHECKS...
 if NOT exist graphics_options goto Mklist
 
 rem IF THE GRAPHICS OPTIONS MOD IS INSTALLED...
@@ -254,11 +290,20 @@ rem IF THE SETTINGS EXTENSION MOD IS NOT INSTALLED...
 		echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
 		echo █ Oops‼ You haven't installed the Settings Extension mod‼      █
 		echo █ Without it, the Graphics Options mod will not work‼          █
-		echo █ INSTALL SETTINGS EXTENSION MOD AND RUN THIS FILE AGAIN‼      █
 		echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
 		echo.
-		pause
-		exit
+		echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+		echo █ Do you want to open the Settings Extension mod page in       █
+		echo █ your browser?                                                █
+		echo █                                                              █
+		echo █  Y - Yes, open the mod page for me. EXIT‼                    █
+		echo █  N - No need, I'll do it myself. EXIT‼                       █
+		echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+		echo.
+
+		Choice
+			If Errorlevel 2 Goto NoSEMGO
+			If Errorlevel 1 Goto YesSEMGO
 	)
 
 rem IF THE SETTINGS EXTENSION MOD IS INSTALLED...
@@ -294,6 +339,33 @@ rem IF THE SETTINGS EXTENSION MOD IS INSTALLED...
 		cls
 	)
 )
+
+goto Mklist
+
+rem OPEN THE SETTINGS EXTENSION MOD PAGE IN A BROWSER--?------------------------!
+:YesSEMGO
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ Now the mod page will open and this window will close‼       █
+	echo █ INSTALL THE SETTINGS EXTENSION MOD AND RUN THIS FILE AGAIN‼  █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	pause
+	start https://www.nexusmods.com/warhammer40kdarktide/mods/23
+exit
+
+:NoSEMGO
+	cls
+	rem Red text color
+	color 0C
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ INSTALL THE SETTINGS EXTENSION MOD AND RUN THIS FILE AGAIN‼  █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	pause
+exit
+rem ----------------------------------------------------------------------------!
 
 rem CREATE THE REST OF THE LIST OF MODS, EXCLUDING BASE, DMF, ANIMATION EVENTS AND SETTINGS EXTENSION. IN ALPHABETICAL ORDER.
 :Mklist

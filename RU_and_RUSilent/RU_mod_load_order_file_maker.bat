@@ -101,7 +101,7 @@ rem Стандартный цвет: белый по чёрному
 	echo.
 
 rem СОЗДАЁМ РЕЗЕРВНУЮ КОПИЮ ФАЙЛА MOD_LOAD_ORDER.TXT
-	 echo f | XCOPY mod_load_order.txt mod_load_order.txt_%Date:~0,2%.%Date:~3,2%.%Date:~6,4%_%TIME:~0,2%.%TIME:~3,2%.%TIME:~6,4%_.bak /y /i 1>nul
+	 echo f | XCOPY mod_load_order.txt mod_load_order.txt_%Date:~0,2%.%Date:~3,2%.%Date:~6,4%_%TIME:~3,2%%TIME:~6,5%.bak /y /i 1>nul
 	timeout /t 2 1>nul
 
 	rem Салатовый цвет текста
@@ -125,11 +125,11 @@ rem Стандартный цвет: белый по чёрному
 	echo.
 	timeout /t 2 1>nul
 
-	(echo -- ################################################################
-	echo -- Enter user mod names below, separated by line.
-	echo -- Order in the list determines the order in which mods are loaded.
-	echo -- Do not rename a mod's folders.
-	echo -- You do not need to include 'base' or 'dmf' mod folders.
+	(echo -- #RU#############################################################
+	echo -- Введите названия выших модов ниже, каждый мод с новой строки.
+	echo -- Порядок в списке определяет порядок загрузки модов.
+	echo -- Не переименовывайте папки мода.
+	echo -- Вам не нужно включать в список папки модов «base» или «dmf».
 	echo -- ################################################################
 	echo.)>mod_load_order.txt
 
@@ -177,11 +177,19 @@ rem ЕСЛИ МОД ANIMATION ЕVENTS НЕ УСТАНОВЛЕН...
 		echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
 		echo █ ОЙ‼ Вы не установили мод Animation Еvents‼                   █
 		echo █ Без него мод Scoreboard не будет работать‼                   █
-		echo █ УСТАНОВИТЕ ANIMATION ЕVENTS И ЗАПУСТИТЕ ЭТОТ ФАЙЛ СНОВА‼     █
 		echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
 		echo.
-		pause
-		exit
+		echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+		echo █ Открыть вам в браузере страницу мода Animation Еvents?       █
+		echo █                                                              █
+		echo █  Y - Да, открой мне страницу мода. ВЫХОД‼                    █
+		echo █  N - Не нужно, я сделаю всё сам. ВЫХОД‼                      █
+		echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+		echo.
+
+		Choice
+			If Errorlevel 2 Goto NoAEMS
+			If Errorlevel 1 Goto YesAEMS
 	)
 
 rem ЕСЛИ МОД ANIMATION ЕVENTS УСТАНОВЛЕН...
@@ -217,6 +225,33 @@ rem ЕСЛИ МОД ANIMATION ЕVENTS УСТАНОВЛЕН...
 		cls
 	)
 )
+
+goto GOcheck
+
+rem ОТКРЫТЬ СТРАНИЦУ МОДА ANIMATION ЕVENTS В БРАУЗЕРЕ?--------------------------!
+:YesAEMS
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ Сейчас откроется страница мода, а это окно закроется‼        █
+	echo █ УСТАНОВИТЕ МОД ANIMATION ЕVENTS И ЗАПУСТИТЕ ЭТОТ ФАЙЛ СНОВА‼ █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	pause
+	start https://www.nexusmods.com/warhammer40kdarktide/mods/21
+exit
+
+:NoAEMS
+	cls
+	rem Красный цвет текста
+	color 0C
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ УСТАНОВИТЕ МОД ANIMATION ЕVENTS И ЗАПУСТИТЕ ЭТОТ ФАЙЛ СНОВА‼ █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	pause
+exit
+rem ----------------------------------------------------------------------------!
 
 :GOcheck
 
@@ -254,11 +289,19 @@ rem ЕСЛИ МОД SETTINGS EXTENSION НЕ УСТАНОВЛЕН...
 		echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
 		echo █ ОЙ‼ Вы не установили мод Settings Extension‼                 █
 		echo █ Без него мод Graphics Options не будет работать‼             █
-		echo █ УСТАНОВИТЕ SETTINGS EXTENSION И ЗАПУСТИТЕ ЭТОТ ФАЙЛ СНОВА‼   █
 		echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
 		echo.
-		pause
-		exit
+		echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+		echo █ Открыть вам в браузере страницу мода Settings Extension?     █
+		echo █                                                              █
+		echo █  Y - Да, открой мне страницу мода. ВЫХОД‼                    █
+		echo █  N - Не нужно, я сделаю всё сам. ВЫХОД‼                      █
+		echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+		echo.
+
+		Choice
+			If Errorlevel 2 Goto NoSEMGO
+			If Errorlevel 1 Goto YesSEMGO
 	)
 
 rem ЕСЛИ МОД SETTINGS EXTENSION УСТАНОВЛЕН...
@@ -294,6 +337,33 @@ rem ЕСЛИ МОД SETTINGS EXTENSION УСТАНОВЛЕН...
 		cls
 	)
 )
+
+goto Mklist
+
+rem ОТКРЫТЬ СТРАНИЦУ МОДА SETTINGS EXTENSION В БРАУЗЕРЕ?------------------------!
+:YesSEMGO
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ Сейчас откроется страница мода, а это окно закроется‼        █
+	echo █ УСТАНОВИТЕ МОД SETTINGS EXTENSION И ЗАПУСТИТЕ ЭТОТ ФАЙЛ СНОВА█
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	pause
+	start https://www.nexusmods.com/warhammer40kdarktide/mods/23
+exit
+
+:NoSEMGO
+	cls
+	rem Красный цвет текста
+	color 0C
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ УСТАНОВИТЕ МОД SETTINGS EXTENSION И ЗАПУСТИТЕ ЭТОТ ФАЙЛ СНОВА█
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	pause
+exit
+rem ----------------------------------------------------------------------------!
 
 rem СОЗДАЁМ ОСТАЛЬНОЙ СПИСОК МОДОВ, ИСКЛЮЧАЯ BASE, DMF, ANIMATION ЕVENTS и SETTINGS EXTENSION. В АЛФАВИТНОМ ПОРЯДКЕ(ПОКА ЧТО).
 :Mklist
