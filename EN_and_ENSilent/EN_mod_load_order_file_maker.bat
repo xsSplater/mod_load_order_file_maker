@@ -257,7 +257,7 @@ rem ----------------------------------------------------------------------------
 :GOcheck
 
 rem IF THE GRAPHICS OPTIONS MOD IS NOT INSTALLED, SKIP ALL ITS CHECKS...
-if NOT exist graphics_options goto Mklist
+if NOT exist graphics_options goto PWCheck
 
 rem IF THE GRAPHICS OPTIONS MOD IS INSTALLED...
 if exist graphics_options (
@@ -340,7 +340,7 @@ rem IF THE SETTINGS EXTENSION MOD IS INSTALLED...
 	)
 )
 
-goto Mklist
+goto PWCheck
 
 rem OPEN THE SETTINGS EXTENSION MOD PAGE IN A BROWSER--?------------------------!
 :YesSEMGO
@@ -367,6 +367,45 @@ exit
 exit
 rem ----------------------------------------------------------------------------!
 
+:PWCheck
+
+rem IF THE PSYCH WARD MOD IS NOT INSTALLED, SKIP ALL ITS CHECKS...
+if NOT exist psych_ward goto Mklist
+
+rem IF THE PSYCH WARD MOD IS INSTALLED...
+if exist psych_ward (
+	rem Light green text color
+	color 0A
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ PSYCH WARD MOD FOUND‼                                        █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	timeout /t 2 1>nul
+
+	rem Standart color. Black text and white letters
+	color 07
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ Raise it to the top of the list for the mods to work properly█
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+
+	echo.>>mod_load_order.txt
+	echo psych_ward>>mod_load_order.txt
+
+	timeout /t 2 1>nul
+	rem Light green text color
+	color 0A
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ DONE‼                                                        █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	timeout /t 2 1>nul
+	cls
+)
+
 rem CREATE THE REST OF THE LIST OF MODS, EXCLUDING BASE, DMF, ANIMATION EVENTS AND SETTINGS EXTENSION. IN ALPHABETICAL ORDER.
 :Mklist
 rem Standart color. Black text and white letters
@@ -379,7 +418,7 @@ echo.
 
 echo.>>mod_load_order.txt
 for /f "tokens=*" %%i in (' dir /b /ad ^|findstr /iv /c:"dmf" /c:"base" 
-/c:"animation_events" /c:"settings_extension"') do set "mydirs_%%~snxi=%%~nxi" 2>nul
+/c:"animation_events" /c:"settings_extension" /c:"psych_ward"') do set "mydirs_%%~snxi=%%~nxi" 2>nul
 for /f "tokens=2 delims== eol=" %%i in (' set mydirs_ ') do 1>>mod_load_order.txt echo %%i
 
 timeout /t 2 1>nul

@@ -151,7 +151,7 @@ rem ----------------------------------------------------------------------------
 :GOcheck
 
 rem ЕСЛИ МОД GRAPHICS OPTIONS НЕ УСТАНОВЛЕН, ПРОПУСКАЕМ ВСЕ ЕГО ПРОВЕРКИ...
-if NOT exist graphics_options goto Mklist
+if NOT exist graphics_options goto PWCheck
 
 rem ЕСЛИ МОД GRAPHICS OPTIONS УСТАНОВЛЕН...
 if exist graphics_options (
@@ -186,7 +186,7 @@ rem ЕСЛИ МОД SETTINGS EXTENSION УСТАНОВЛЕН...
 	)
 )
 
-goto Mklist
+goto PWCheck
 
 rem ОТКРЫТЬ СТРАНИЦУ МОДА SETTINGS EXTENSION В БРАУЗЕРЕ?------------------------!
 :YesSEMGO
@@ -213,12 +213,23 @@ exit
 exit
 rem ----------------------------------------------------------------------------!
 
+:PWCheck
+
+rem ЕСЛИ МОД PSYCH WARD НЕ УСТАНОВЛЕН, ПРОПУСКАЕМ ВСЕ ЕГО ПРОВЕРКИ...
+if NOT exist psych_ward goto Mklist
+
+rem ЕСЛИ МОД PSYCH WARD УСТАНОВЛЕН...
+if exist psych_ward (
+	echo.>>mod_load_order.txt
+	echo psych_ward>>mod_load_order.txt
+)
+
 rem СОЗДАЁМ ОСТАЛЬНОЙ СПИСОК МОДОВ, ИСКЛЮЧАЯ BASE, DMF, ANIMATION ЕVENTS и SETTINGS EXTENSION. В АЛФАВИТНОМ ПОРЯДКЕ(ПОКА ЧТО).
 :Mklist
 
 echo.>>mod_load_order.txt
 for /f "tokens=*" %%i in (' dir /b /ad ^|findstr /iv /c:"dmf" /c:"base" 
-/c:"animation_events" /c:"settings_extension"') do set "mydirs_%%~snxi=%%~nxi" 2>nul
+/c:"animation_events" /c:"settings_extension" /c:"psych_ward"') do set "mydirs_%%~snxi=%%~nxi" 2>nul
 for /f "tokens=2 delims== eol=" %%i in (' set mydirs_ ') do 1>>mod_load_order.txt echo %%i
 
 start mod_load_order.txt
