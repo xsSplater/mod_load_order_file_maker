@@ -4,7 +4,7 @@
 
 ![](https://staticdelivery.nexusmods.com/mods/4943/images/headers/139_1681938046.jpg)
 
-Download from: [Nexus](https://www.nexusmods.com/warhammer40kdarktide/mods/124)
+Download from: [Nexus](https://www.nexusmods.com/warhammer40kdarktide/mods/139)
 
 Did you removed/added mods? Run the batch file and just check if they are removed/added in the list, which automatically changed and opened for you.
 # +++------------------------------------------------+++
