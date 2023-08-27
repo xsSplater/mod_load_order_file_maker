@@ -39,7 +39,7 @@ rem Стандартный цвет: белый по чёрному
 
 goto MLOTfinded
 
-rem СОЗАДАВАТЬ НОВЫЙ ФАЙЛ MOD_LOAD_ORDER.TXT?-----------------------------------!
+rem СОЗДАВАТЬ НОВЫЙ ФАЙЛ MOD_LOAD_ORDER.TXT?------------------------------------!
 :YesMLOT
 	cls
 	rem Салатовый цвет текста
@@ -151,7 +151,7 @@ rem ----------------------------------------------------------------------------
 :GOcheck
 
 rem ЕСЛИ МОД GRAPHICS OPTIONS НЕ УСТАНОВЛЕН, ПРОПУСКАЕМ ВСЕ ЕГО ПРОВЕРКИ...
-if NOT exist graphics_options goto PWCheck
+if NOT exist graphics_options goto LMICheck
 
 rem ЕСЛИ МОД GRAPHICS OPTIONS УСТАНОВЛЕН...
 if exist graphics_options (
@@ -186,7 +186,7 @@ rem ЕСЛИ МОД SETTINGS EXTENSION УСТАНОВЛЕН...
 	)
 )
 
-goto PWCheck
+goto LMICheck
 
 rem ОТКРЫТЬ СТРАНИЦУ МОДА SETTINGS EXTENSION В БРАУЗЕРЕ?------------------------!
 :YesSEMGO
@@ -211,7 +211,19 @@ exit
 	echo.
 	pause
 exit
+
 rem ----------------------------------------------------------------------------!
+
+:LMICheck
+
+rem ЕСЛИ МОД LOGMEIN НЕ УСТАНОВЛЕН, ПРОПУСКАЕМ ВСЕ ЕГО ПРОВЕРКИ...
+if NOT exist LogMeIn goto PWCheck
+
+rem ЕСЛИ МОД LOGMEIN УСТАНОВЛЕН...
+if exist LogMeIn (
+	echo.>>mod_load_order.txt
+	echo LogMeIn>>mod_load_order.txt
+)
 
 :PWCheck
 
@@ -229,7 +241,7 @@ rem СОЗДАЁМ ОСТАЛЬНОЙ СПИСОК МОДОВ, ИСКЛЮЧАЯ 
 
 echo.>>mod_load_order.txt
 for /f "tokens=*" %%i in (' dir /b /ad ^|findstr /iv /c:"dmf" /c:"base" 
-/c:"animation_events" /c:"settings_extension" /c:"psych_ward"') do set "mydirs_%%~snxi=%%~nxi" 2>nul
+/c:"animation_events" /c:"settings_extension" /c:"psych_ward" /c:"LogMeIn"') do set "mydirs_%%~snxi=%%~nxi" 2>nul
 for /f "tokens=2 delims== eol=" %%i in (' set mydirs_ ') do 1>>mod_load_order.txt echo %%i
 
 start mod_load_order.txt
