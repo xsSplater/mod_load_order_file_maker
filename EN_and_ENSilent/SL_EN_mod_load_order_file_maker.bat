@@ -152,7 +152,7 @@ rem ----------------------------------------------------------------------------
 :GOcheck
 
 rem IF THE GRAPHICS OPTIONS MOD IS NOT INSTALLED, SKIP ALL ITS CHECKS...
-if NOT exist graphics_options goto PWCheck
+if NOT exist graphics_options goto LMICheck
 
 rem IF THE GRAPHICS OPTIONS MOD IS INSTALLED...
 if exist graphics_options (
@@ -188,7 +188,7 @@ rem IF THE SETTINGS EXTENSION MOD IS INSTALLED...
 	)
 )
 
-goto PWCheck
+goto LMICheck
 
 rem OPEN THE SETTINGS EXTENSION MOD PAGE IN A BROWSER--?------------------------!
 :YesSEMGO
@@ -213,7 +213,19 @@ exit
 	echo.
 	pause
 exit
+
 rem ----------------------------------------------------------------------------!
+
+:LMICheck
+
+rem IF THE LOGMEIN MOD IS NOT INSTALLED, SKIP ALL ITS CHECKS...
+if NOT exist LogMeIn goto PWCheck
+
+rem IF THE LOGMEIN MOD IS INSTALLED...
+if exist LogMeIn (
+	echo.>>mod_load_order.txt
+	echo LogMeIn>>mod_load_order.txt
+)
 
 :PWCheck
 
@@ -231,7 +243,7 @@ rem CREATE THE REST OF THE LIST OF MODS, EXCLUDING BASE, DMF, ANIMATION EVENTS A
 
 echo.>>mod_load_order.txt
 for /f "tokens=*" %%i in (' dir /b /ad ^|findstr /iv /c:"dmf" /c:"base" 
-/c:"animation_events" /c:"settings_extension" /c:"psych_ward"') do set "mydirs_%%~snxi=%%~nxi" 2>nul
+/c:"animation_events" /c:"settings_extension" /c:"psych_ward" /c:"LogMeIn"') do set "mydirs_%%~snxi=%%~nxi" 2>nul
 for /f "tokens=2 delims== eol=" %%i in (' set mydirs_ ') do 1>>mod_load_order.txt echo %%i
 
 start mod_load_order.txt
