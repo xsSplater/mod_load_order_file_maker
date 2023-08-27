@@ -12,7 +12,7 @@ Did you removed/added mods? Run the batch file and just check if they are remove
 ### +++ WHAT THE BAT FILE DOES:
 1. It makes a backup of the previous version of the mod_load_order.txt file.
    Now backups are created, every time new ones, when you run the file.
-2. It checks if the Scoreboard, Graphics Options and Psych Ward mods are installed.
+2. It checks if the Scoreboard, Graphics Options, Psych Ward and Log Me In mods are installed.
    Also checks if the mods they depend on are installed too and moves those mods up in the list.
 3. Than it copies the names of all folders except base and dmf.
 4. Creates a list and shows it to you.
@@ -30,7 +30,7 @@ Unpack to MODS folder:
 ### +++ ЧТО БАТНИК ДЕЛАЕТ:
 1. Батник сначала делает резервную копию предыдущей версии файла mod_load_order.txt.
    Теперь резервные копии создаются, каждый раз новые, когда вы запускаете файл.
-2. Затем проверяет установлены ли моды Scoreboard, Graphics Options и Psych Ward.
+2. Затем проверяет установлены ли моды Scoreboard, Graphics Options, Psych Ward и Log Me In.
    Если да, то проверяет установку нужных для их работы зависимостей
    и поднимает эти моды вверх списка для правильной работы.
 3. Копирует ваш список модов на основе всех папок в MODS, исключая, как и должно, папки base и dmf.
