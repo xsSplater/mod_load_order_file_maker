@@ -49,7 +49,7 @@ rem Стандартный цвет: белый по чёрному
 
 goto MLOTfinded
 
-rem СОЗАДАВАТЬ НОВЫЙ ФАЙЛ MOD_LOAD_ORDER.TXT?-----------------------------------!
+rem СОЗДАВАТЬ НОВЫЙ ФАЙЛ MOD_LOAD_ORDER.TXT?------------------------------------!
 :YesMLOT
 	cls
 	rem Салатовый цвет текста
@@ -256,7 +256,7 @@ rem ----------------------------------------------------------------------------
 :GOcheck
 
 rem ЕСЛИ МОД GRAPHICS OPTIONS НЕ УСТАНОВЛЕН, ПРОПУСКАЕМ ВСЕ ЕГО ПРОВЕРКИ...
-if NOT exist graphics_options goto PWCheck
+if NOT exist graphics_options goto LMICheck
 
 rem ЕСЛИ МОД GRAPHICS OPTIONS УСТАНОВЛЕН...
 if exist graphics_options (
@@ -338,7 +338,7 @@ rem ЕСЛИ МОД SETTINGS EXTENSION УСТАНОВЛЕН...
 	)
 )
 
-goto PWCheck
+goto LMICheck
 
 rem ОТКРЫТЬ СТРАНИЦУ МОДА SETTINGS EXTENSION В БРАУЗЕРЕ?------------------------!
 :YesSEMGO
@@ -364,6 +364,47 @@ exit
 	pause
 exit
 rem ----------------------------------------------------------------------------!
+
+:LMICheck
+
+rem ЕСЛИ МОД LOGMEIN НЕ УСТАНОВЛЕН, ПРОПУСКАЕМ ВСЕ ЕГО ПРОВЕРКИ...
+if NOT exist LogMeIn goto PWCheck
+
+rem ЕСЛИ МОД LOGMEIN УСТАНОВЛЕН...
+if exist LogMeIn (
+	rem Салатовый цвет текста
+	color 0A
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ МОД LOG ME IN НАЙДЕН‼                                        █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	timeout /t 2 1>nul
+
+	rem Стандартный цвет: белый по чёрному
+	color 07
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ Поднимаю его вверх списка для правильной работы модов‼       █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+
+	echo.>>mod_load_order.txt
+	echo LogMeIn>>mod_load_order.txt
+
+	timeout /t 2 1>nul
+	rem Салатовый цвет текста
+	color 0A
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ ГОТОВО‼                                                      █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	timeout /t 2 1>nul
+	cls
+)
+
+
 
 :PWCheck
 
@@ -416,7 +457,7 @@ echo.
 
 echo.>>mod_load_order.txt
 for /f "tokens=*" %%i in (' dir /b /ad ^|findstr /iv /c:"dmf" /c:"base" 
-/c:"animation_events" /c:"settings_extension" /c:"psych_ward"') do set "mydirs_%%~snxi=%%~nxi" 2>nul
+/c:"animation_events" /c:"settings_extension" /c:"psych_ward" /c:"LogMeIn"') do set "mydirs_%%~snxi=%%~nxi" 2>nul
 for /f "tokens=2 delims== eol=" %%i in (' set mydirs_ ') do 1>>mod_load_order.txt echo %%i
 
 timeout /t 2 1>nul
