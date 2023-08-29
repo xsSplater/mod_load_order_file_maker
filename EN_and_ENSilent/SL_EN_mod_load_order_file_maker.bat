@@ -4,6 +4,145 @@
 setlocal enableextensions enabledelayedexpansion
 1>nul chcp 65001
 
+rem CHECKING IS THE FILE INSTALLED IN THE CORRECT FOLDER? 
+REM IF DARKTIDE MOD LOADER'S MAIN FOLDER BASE DOESN'T EXIST...
+if NOT exist base (
+rem Red text color
+	color 0C
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ DARKTIDE MOD LOADER'S MAIN FOLDER BASE NOT FOUND‼            █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+timeout /t 2 1>nul
+cls
+
+rem Standart color. Black text and white letters
+	color 07
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ Did you really install Darktide Mod Loader?                  █
+	echo █ Looks like NO‼ The main mod folder "base" is missing‼        █
+	echo █                                                              █
+	echo █ Make sure you've installed everything correctly‼             █
+	echo █ Can I open a link to the Darktide Mod Installation Guide     █
+	echo █ for you?                                                     █
+	echo █                                                              █
+	echo █  Y - Yes, please. I need some help with this.                █
+	echo █  N - No, I'll check everything myself... EXIT‼               █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+
+	Choice
+		If Errorlevel 2 Goto NoDML
+		If Errorlevel 1 Goto YesDML
+)
+
+goto DMLFinded
+
+rem CAN I OPEN A LINK TO THE DARKTIDE MOD INSTALLATION GUIDE FOR YOU?----------‼
+:YesDML
+	cls
+	rem Light green text color
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ Now the Guide page will open and this window will close‼     █
+	echo █ VERIFY THE INSTALLATION AND RUN THIS FILE AGAIN‼             █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	pause
+	start https://steamcommunity.com/sharedfiles/filedetails/?id=2953324027
+exit
+
+:NoDML
+	cls
+	rem Red text color
+	color 0C
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ VERIFY THE INSTALLATION AND RUN THIS FILE AGAIN‼             █
+	echo █                                                              █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	pause
+exit
+rem ----------------------------------------------------------------------------‼
+
+rem IF DARKTIDE MOD LOADER'S MAIN FOLDER BASE EXISTS...
+:DMLFinded
+if exist base goto DMFCheck
+
+:DMFCheck
+
+REM IF DARKTIDE MOD FRAMEWORK'S MAIN FOLDER DMF DOESN'T EXIST...
+if NOT exist dmf (
+rem Red text color
+	color 0C
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ DARKTIDE MOD FRAMEWORK'S MAIN FOLDER DMF NOT FOUND‼          █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+timeout /t 2 1>nul
+cls
+
+rem Standart color. Black text and white letters
+	color 07
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ Did you really install Darktide Mod Framework?               █
+	echo █ Looks like NO‼ The main mod folder "dmf" is missing‼         █
+	echo █                                                              █
+	echo █ Make sure you've installed everything correctly‼             █
+	echo █ Can I open a link to the Darktide Mod Installation Guide     █
+	echo █ for you?                                                     █
+	echo █                                                              █
+	echo █  Y - Yes, please. I need some help with this.                █
+	echo █  N - No, I'll check everything myself... EXIT‼               █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+
+	Choice
+		If Errorlevel 2 Goto NoDMF
+		If Errorlevel 1 Goto YesDMF
+)
+
+goto DMFFinded
+
+rem CAN I OPEN A LINK TO THE DARKTIDE MOD INSTALLATION GUIDE FOR YOU?----------‼
+:YesDMF
+	cls
+	rem Light green text color
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ Now the Guide page will open and this window will close‼     █
+	echo █ VERIFY THE INSTALLATION AND RUN THIS FILE AGAIN‼             █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	pause
+	start https://steamcommunity.com/sharedfiles/filedetails/?id=2953324027
+exit
+
+:NoDMF
+	cls
+	rem Red text color
+	color 0C
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ VERIFY THE INSTALLATION AND RUN THIS FILE AGAIN‼             █
+	echo █                                                              █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	pause
+exit
+rem ----------------------------------------------------------------------------‼
+
+rem IF DARKTIDE MOD FRAMEWORK'S MAIN FOLDER DMF EXISTS...
+:DMFFinded
+if exist dmf goto MLOTCheck
+
+:MLOTCheck
+
 rem IF MOD_LOAD_ORDER.TXT DOES NOT EXIST...
 if NOT exist mod_load_order.txt (
 rem Red text color
