@@ -2,7 +2,7 @@
 
 # mod_load_order.txt File Maker
 
-## version: 1.5
+## version: 1.6
 
 ![](https://staticdelivery.nexusmods.com/mods/4943/images/headers/139_1681938046.jpg)
 
@@ -16,7 +16,7 @@ Did you removed/added mods? Run the batch file and just check if they are remove
    ﻿which are installed with Darktide Mod Loader and Darktide Mod Framework mods.
 2. It makes a backup of the previous version of the mod_load_order.txt file.
    ﻿Now backups are created, every time new ones, when you run the file.
-3. It checks if the Scoreboard, Graphics Options, Psych Ward and Log Me In mods are installed.
+3. It checks if the Scoreboard, Graphics Options,  Log Me In, Psych Ward and Darktide Local Server mods are installed.
    ﻿Also checks if the mods they depend on are installed too and moves those mods up in the list.
 4. Than it copies the names of all folders except base and dmf.
 5. Creates a list and shows it to you.
@@ -36,7 +36,7 @@ Unpack to MODS folder:
    ﻿которые устанавливаются вместе с модами Darktide Mod Loader и Darktide Mod Framework.
 2. Батник сначала делает резервную копию предыдущей версии файла mod_load_order.txt.
    ﻿Теперь резервные копии создаются, каждый раз новые, когда вы запускаете файл.
-3. Затем проверяет установлены ли моды Scoreboard﻿, Graphics Options﻿, Psych Ward﻿ и Log Me In﻿ .
+3. Затем проверяет установлены ли моды Scoreboard﻿, Graphics Options﻿, Log Me In﻿, Psych Ward﻿ и Darktide Local Server﻿.
    ﻿Если да, то проверяет установку нужных для их работы зависимостей
    ﻿и поднимает эти моды вверх списка для правильной работы.
 4. Копирует ваш список модов на основе всех папок в MODS, исключая, как и должно, папки base и dmf.
