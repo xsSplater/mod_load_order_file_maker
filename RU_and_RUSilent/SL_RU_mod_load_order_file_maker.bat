@@ -359,19 +359,30 @@ if NOT exist LogMeIn goto PWCheck
 
 rem ЕСЛИ МОД LOGMEIN УСТАНОВЛЕН...
 if exist LogMeIn (
-	echo.>>mod_load_order.txt
+rem 	echo.>>mod_load_order.txt
 	echo LogMeIn>>mod_load_order.txt
 )
 
 :PWCheck
 
 rem ЕСЛИ МОД PSYCH WARD НЕ УСТАНОВЛЕН, ПРОПУСКАЕМ ВСЕ ЕГО ПРОВЕРКИ...
-if NOT exist psych_ward goto Mklist
+if NOT exist psych_ward goto DLocSCheck
 
 rem ЕСЛИ МОД PSYCH WARD УСТАНОВЛЕН...
 if exist psych_ward (
-	echo.>>mod_load_order.txt
+rem 	echo.>>mod_load_order.txt
 	echo psych_ward>>mod_load_order.txt
+)
+
+:DLocSCheck
+
+rem ЕСЛИ МОД DARKTIDE LOCAL SERVER НЕ УСТАНОВЛЕН, ПРОПУСКАЕМ ВСЕ ЕГО ПРОВЕРКИ...
+if NOT exist DarktideLocalServer goto Mklist
+
+rem ЕСЛИ МОД DARKTIDE LOCAL SERVER УСТАНОВЛЕН...
+if exist DarktideLocalServer (
+rem 	echo.>>mod_load_order.txt
+	echo DarktideLocalServer>>mod_load_order.txt
 )
 
 rem СОЗДАЁМ ОСТАЛЬНОЙ СПИСОК МОДОВ, ИСКЛЮЧАЯ BASE, DMF, ANIMATION ЕVENTS и SETTINGS EXTENSION. В АЛФАВИТНОМ ПОРЯДКЕ(ПОКА ЧТО).
@@ -379,7 +390,7 @@ rem СОЗДАЁМ ОСТАЛЬНОЙ СПИСОК МОДОВ, ИСКЛЮЧАЯ 
 
 echo.>>mod_load_order.txt
 for /f "tokens=*" %%i in (' dir /b /ad ^|findstr /iv /c:"dmf" /c:"base" 
-/c:"animation_events" /c:"settings_extension" /c:"psych_ward" /c:"LogMeIn"') do set "mydirs_%%~snxi=%%~nxi" 2>nul
+/c:"animation_events" /c:"settings_extension" /c:"LogMeIn" /c:"psych_ward" /c:"DarktideLocalServer"') do set "mydirs_%%~snxi=%%~nxi" 2>nul
 for /f "tokens=2 delims== eol=" %%i in (' set mydirs_ ') do 1>>mod_load_order.txt echo %%i
 
 start mod_load_order.txt
