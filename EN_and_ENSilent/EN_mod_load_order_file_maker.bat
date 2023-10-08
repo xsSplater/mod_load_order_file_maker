@@ -576,7 +576,7 @@ if exist LogMeIn (
 	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
 	echo.
 
-	echo.>>mod_load_order.txt
+rem 	echo.>>mod_load_order.txt
 	echo LogMeIn>>mod_load_order.txt
 
 	timeout /t 2 1>nul
@@ -594,7 +594,7 @@ if exist LogMeIn (
 :PWCheck
 
 rem IF THE PSYCH WARD MOD IS NOT INSTALLED, SKIP ALL ITS CHECKS...
-if NOT exist psych_ward goto Mklist
+if NOT exist psych_ward goto DLocSCheck
 
 rem IF THE PSYCH WARD MOD IS INSTALLED...
 if exist psych_ward (
@@ -615,8 +615,47 @@ if exist psych_ward (
 	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
 	echo.
 
-	echo.>>mod_load_order.txt
+rem 	echo.>>mod_load_order.txt
 	echo psych_ward>>mod_load_order.txt
+
+	timeout /t 2 1>nul
+	rem Light green text color
+	color 0A
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ DONE‼                                                        █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	timeout /t 2 1>nul
+	cls
+)
+
+:DLocSCheck
+
+rem IF THE DARKTIDE LOCAL SERVER MOD IS NOT INSTALLED, SKIP ALL ITS CHECKS...
+if NOT exist DarktideLocalServer goto Mklist
+
+rem IF THE DARKTIDE LOCAL SERVER MOD IS INSTALLED...
+if exist DarktideLocalServer (
+	rem Light green text color
+	color 0A
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ DARKTIDE LOCAL SERVER MOD FOUND‼                             █
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+	timeout /t 2 1>nul
+
+	rem Standart color. Black text and white letters
+	color 07
+	echo.
+	echo ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+	echo █ Raise it to the top of the list for the mods to work properly█
+	echo ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+	echo.
+
+rem 	echo.>>mod_load_order.txt
+	echo DarktideLocalServer>>mod_load_order.txt
 
 	timeout /t 2 1>nul
 	rem Light green text color
@@ -642,7 +681,7 @@ echo.
 
 echo.>>mod_load_order.txt
 for /f "tokens=*" %%i in (' dir /b /ad ^|findstr /iv /c:"dmf" /c:"base" 
-/c:"animation_events" /c:"settings_extension" /c:"psych_ward" /c:"LogMeIn"') do set "mydirs_%%~snxi=%%~nxi" 2>nul
+/c:"animation_events" /c:"settings_extension" /c:"LogMeIn" /c:"psych_ward" /c:"DarktideLocalServer"') do set "mydirs_%%~snxi=%%~nxi" 2>nul
 for /f "tokens=2 delims== eol=" %%i in (' set mydirs_ ') do 1>>mod_load_order.txt echo %%i
 
 timeout /t 2 1>nul
