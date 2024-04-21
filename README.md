@@ -2,7 +2,7 @@
 
 # mod_load_order.txt File Maker
 
-## version: 1.6
+## version: 1.89
 
 ![Example](https://staticdelivery.nexusmods.com/mods/4943/images/headers/139_1681938046.jpg)
 
