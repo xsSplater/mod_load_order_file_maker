@@ -28,7 +28,6 @@ Unpack to MODS folder:
 Makes a backup copy of the mod_load_order.txt file. Checks for Obsolete mods and disables them. It also suggests deleting the Obsolete mod folder.
 2. SL_EN_mod_load_order_file_maker.bat — English, Fast. Makes a backup copy of the mod_load_order.txt file. Checks for Obsolete mods and disables them. It also suggests deleting the Obsolete mod folder.
 3. SL_EN_mod_load_order_file_maker_NObckup.bat — English, Fast, NO backup. Checks for Obsolete mods and disables them. It also suggests deleting the Obsolete mod folder.
-
 # +++------------------------------------------------+++
 
 # +++ РУССКОЕ ОПИСАНИЕ +++
@@ -50,6 +49,6 @@ Makes a backup copy of the mod_load_order.txt file. Checks for Obsolete mods and
 2. SL_RU_mod_load_order_file_maker.bat — Русская версия. Быстрая. Делает резервную копию файла mod_load_order.txt. Ищет и отключает устаревшие моды, а также предлагает удалить их папки.
 3. SL_RU_mod_load_order_file_maker_NObckup.bat — Русская версия. Быстрая. НЕ делает резервную копию файла mod_load_order.txt. Ищет и отключает устаревшие моды, а также предлагает удалить их папки.
 4. SL_RU_Sort_mod_load_order_file_maker_NObckup.bat — Русская версия. Быстрая. НЕ делает резервную копию файла mod_load_order.txt. Ищет и отключает устаревшие моды, а также предлагает удалить их папки. Сортирует моды по русскому алфавиту.
-
 # +++------------------------------------------------+++
+
 Code is under an MIT [license](LICENSE)
