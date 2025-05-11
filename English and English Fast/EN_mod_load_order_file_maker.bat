@@ -1,4 +1,4 @@
-:: Made by xsSplater under an GPL 3.0 license.
+:: Made by xsSplater under a GPL 3.0 license.
 @echo off
 setlocal enableextensions enabledelayedexpansion
 1>nul chcp 65001
