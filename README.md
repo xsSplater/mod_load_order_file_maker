@@ -8,7 +8,7 @@
 
 Download from: [Nexus](https://www.nexusmods.com/warhammer40kdarktide/mods/139)
 
-Did you removed/added mods?					﻿﻿﻿﻿﻿﻿Удалили/добавили моды?
+Did you removed/added mods?					Удалили/добавили моды?
 Run my batch file.							Запустите батник.
 
 ![Example](https://steamuserimages-a.akamaihd.net/ugc/2028353600788151662/BDF513AC19E0903BB034F020CE64699887BBDEEF/)
