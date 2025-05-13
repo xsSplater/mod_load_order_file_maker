@@ -2,14 +2,16 @@
 
 # mod_load_order.txt File Maker
 
-## version: 1.89
+## version: 2.0
 
 ![Example](https://staticdelivery.nexusmods.com/mods/4943/images/headers/139_1681938046.jpg)
 
 Download from: [Nexus](https://www.nexusmods.com/warhammer40kdarktide/mods/139)
 
-Did you removed/added mods? Run the batch file and just check if they are removed/added in the list, which automatically changed and opened for you.
-# +++------------------------------------------------+++
+Did you removed/added mods?					﻿﻿﻿﻿﻿﻿Удалили/добавили моды?
+Run my batch file.							Запустите батник.
+
+![Example](https://steamuserimages-a.akamaihd.net/ugc/2028353600788151662/BDF513AC19E0903BB034F020CE64699887BBDEEF/)
 
 ### +++ WHAT THE BAT FILE DOES:
 1. It checks if there are BASE and DMF folders in the MODS folder, which are installed with Darktide Mod Loader and Darktide Mod Framework mods.
@@ -51,4 +53,4 @@ Makes a backup copy of the mod_load_order.txt file. Checks for Obsolete mods and
 4. SL_RU_Sort_mod_load_order_file_maker_NObckup.bat — Русская версия. Быстрая. НЕ делает резервную копию файла mod_load_order.txt. Ищет и отключает устаревшие моды, а также предлагает удалить их папки. Сортирует моды по русскому алфавиту.
 # +++------------------------------------------------+++
 
-Code is under an MIT [license](LICENSE)
+Code is under an GPL 3.0 [license](LICENSE)
