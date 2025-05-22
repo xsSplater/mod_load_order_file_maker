@@ -262,7 +262,7 @@ echo.
 	Choice /c CGYQ
 			REM EXIT
 		If Errorlevel 3 exit
-			REM TO THE С GUIDE PAGE AND EXIT...
+			REM TO THE GUIDE PAGE AND EXIT...
 		If Errorlevel 2 (
 			start https://steamcommunity.com/sharedfiles/filedetails/?id=2953324027 && exit
 		)
@@ -998,7 +998,7 @@ REM ---------------------------/SCOREBOARD PLUGINS------------------------------
 goto WEAPON_CUSTOMIZATION_CHECK
 
 
-REM ПРОВЕРЯЕМ/ДОБАВЛЯЕМ WEAPON CUSTOMIZATION И ВСЕ ПЛАГИНЫ В СПИСОК...
+REM CHECKING/ADDING WEAPON CUSTOMIZATION AND ALL PLUGINS TO THE LIST...
 REM ╔═══════════════════════════════════════════╗
 REM ║ SORTING RULES 4:							║
 REM ╠═══════════════════════════════════════════╣
@@ -1905,7 +1905,7 @@ echo.
 		Choice /c CDSQ
 				REM EXIT
 			If Errorlevel 4 exit
-				REM ОТКРЫВАЕМ СТРАНИЦУ TRUE LEVEL PAGE AND EXIT...
+				REM OPEN TRUE LEVEL PAGE AND EXIT...
 			If Errorlevel 3 (
 				start https://www.nexusmods.com/warhammer40kdarktide/mods/156 && exit
 			)
@@ -2056,7 +2056,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDSQ
+		Choice /c CDSQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE SKITARIUS AND CONTINUE...
@@ -2105,7 +2105,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDSQ
+		Choice /c CDSQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE SKITARIUS AND CONTINUE...
@@ -2154,7 +2154,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDSQ
+		Choice /c CDSQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE SKITARIUS AND CONTINUE...
@@ -2210,7 +2210,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDSQ
+		Choice /c CDSQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE CUSTOM HUD AND CONTINUE...
@@ -2259,7 +2259,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDSQ
+		Choice /c CDSQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE CUSTOM HUD AND CONTINUE...
@@ -2315,7 +2315,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDSQ
+		Choice /c CDSQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE TOGGLE HUD AND CONTINUE...
@@ -2371,7 +2371,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDSQ
+		Choice /c CDSQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE SOLO PLAY AND CONTINUE...
@@ -2427,7 +2427,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDSQ
+		Choice /c CDSQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE DISPLAY PING AND CONTINUE...
@@ -2483,7 +2483,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDSQ
+		Choice /c CDSQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE SHOW EQUIPPED IN LOBBY AND CONTINUE...
@@ -2539,7 +2539,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDTQ
+		Choice /c CDTQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE TRANSPARENT SHIELD AND CONTINUE...
@@ -2647,7 +2647,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDMQ
+		Choice /c CDMQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE MARKERS IMPROVED ALL-IN-ONE AND CONTINUE...
@@ -2696,7 +2696,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDMQ
+		Choice /c CDMQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE MARKERS IMPROVED ALL-IN-ONE AND CONTINUE...
@@ -2745,7 +2745,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDMQ
+		Choice /c CDMQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE MARKERS IMPROVED ALL-IN-ONE AND CONTINUE...
@@ -2794,7 +2794,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDMQ
+		Choice /c CDMQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE MARKERS IMPROVED ALL-IN-ONE AND CONTINUE...
@@ -2843,7 +2843,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDMQ
+		Choice /c CDMQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE MARKERS IMPROVED ALL-IN-ONE AND CONTINUE...
@@ -2892,7 +2892,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDMQ
+		Choice /c CDMQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE MARKERS IMPROVED ALL-IN-ONE AND CONTINUE...
@@ -2941,7 +2941,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDMQ
+		Choice /c CDMQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE MARKERS IMPROVED ALL-IN-ONE AND CONTINUE...
@@ -2990,7 +2990,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDMQ
+		Choice /c CDMQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE MARKERS IMPROVED ALL-IN-ONE AND CONTINUE...
@@ -3039,7 +3039,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDMQ
+		Choice /c CDMQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE MARKERS IMPROVED ALL-IN-ONE AND CONTINUE...
@@ -3096,7 +3096,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDMQ
+		Choice /c CDMQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE MARKERS IMPROVED ALL-IN-ONE AND CONTINUE...
@@ -3151,7 +3151,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDMQ
+		Choice /c CDMQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE STIMM MARKERS AND CONTINUE...
@@ -3200,7 +3200,7 @@ echo ░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 echo ▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓
 echo ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███████
 echo.
-		Choice /c СDMQ
+		Choice /c CDMQ
 				REM EXIT
 			If Errorlevel 4 exit
 				REM REMOVE STIMM MARKERS AND CONTINUE...
